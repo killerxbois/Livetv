@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NonLiveTV - Live Streaming</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+</head>
+
+<!-- Splash Screen -->
+<div id="splash">
+    <img src="https://static.vecteezy.com/system/resources/previews/023/838/190/non_2x/live-streaming-media-video-tv-online-red-news-play-logo-design-symbol-vector.jpg" alt="Logo">
+    <h2>NonLiveTV</h2>
+    <div class="loader"></div>
+</div>
+
+<body>
+
+    <header>
+        <img src="https://static.vecteezy.com/system/resources/previews/023/838/190/non_2x/live-streaming-media-video-tv-online-red-news-play-logo-design-symbol-vector.jpg" alt="Logo" class="logo">
+        <h1>NonLiveTV</h1>
+        <button onclick="toggleTheme()">Toggle Light/Dark</button>
+    </header>
+
+    <div class="controls">
+        <input type="text" id="searchInput" placeholder="Search channels..." oninput="filterChannels()">
+        <select id="categoryFilter" onchange="filterChannels()">
+            <option value="">All Categories</option>
+        </select>
+    </div>
+
+    <div id="favoritesSection">
+        <h2>Favorites</h2>
+        <div class="channel-grid" id="favoritesList"></div>
+    </div>
+
+    <div id="continueSection">
+        <h2>Continue Watching</h2>
+        <div class="channel-grid" id="continueList"></div>
+    </div>
+
+    <div class="channel-grid" id="channelList"></div>
+
+    <div class="player-container" id="playerContainer">
+        <video id="videoPlayer" class="video-js vjs-default-skin" controls autoplay width="100%" height="400">
+            <source src="" type="application/x-mpegURL">
+        </video>
+    </div>
+
+    <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
